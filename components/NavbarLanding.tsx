@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { HoverBorderGradient } from './ui/gradientBorder';
+import Link from 'next/link';
+
 
 const Navbar: React.FC = () => {
     const [isScroll, setIsScroll] = useState<boolean>(false);
@@ -35,10 +37,10 @@ const Navbar: React.FC = () => {
                 />
                 <div className={`${isScroll ? "bglinks" : ""} linkSection hidden lg:flex backdrop-blur-md border border-gray-500 justify-center items-center rounded-full`}>
                     <ul className='flex justify-center items-center h-[50px]'>
-                        <li className='px-5 links text-white text-xl flex justify-center items-center'>Home</li>
-                        <li className='px-5 links text-white text-xl flex justify-center items-center'>Features</li>
-                        <li className='px-5 links text-white text-xl flex justify-center items-center'>FAQ</li>
-                        <li className='px-5 links text-white text-xl flex justify-center items-center'>About US</li>
+                        <Link className='px-5 links text-white text-xl flex justify-center items-center' href={"#home"}>Home</Link>
+                        <Link className='px-5 links text-white text-xl flex justify-center items-center' href={"#features"}>Features</Link>
+                        <Link className='px-5 links text-white text-xl flex justify-center items-center' href={"#FAQ"}>FAQ</Link>
+                        <Link className='px-5 links text-white text-xl flex justify-center items-center' href={"#about"}>About US</Link>
                     </ul>
                 </div>
                 <div className="button1">

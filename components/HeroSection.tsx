@@ -39,7 +39,7 @@ const HeroSection1: React.FC = () => {
     });
 
     return (
-        <div className='flex flex-col justify-center items-center'>
+        <div className='flex flex-col justify-center items-center' id='home'>
             <Section1 />
             <Marquee />
             <div className="brefContainer text-white h-[1800px] bg-[#030014] relative" ref={ref}>

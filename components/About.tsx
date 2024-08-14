@@ -26,7 +26,7 @@ const Footor: React.FC = () => {
     };
 
     return (
-        <div>
+        <div id='about'>
         <motion.div 
             className="relative flex flex-col justify-center items-center mt-24"
             onMouseMove={handleMouseMove}

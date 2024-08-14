@@ -5,7 +5,7 @@ import Section5 from './Section5';
 
 const Features1: React.FC = () => {
     return (
-        <div className='bg-[#030014] relative'>
+        <div className='bg-[#030014] relative' id='features'>
             <Section1 />
             {/* <Section2 /> */}
             <Section3 />

@@ -4,7 +4,7 @@ import Section4 from './Features/Section4';
 
 const FAQ: React.FC = () => {
     return (
-        <div className='w-full flex flex-col justify-center items-center'>
+        <div className='w-full flex flex-col justify-center items-center' id="FAQ">
             <div className='flex flex-col justify-center items-center mt-20 relative w-[90%] drop-shadow-xl bg-transparent'>
                 <div className="keyFeatures w-full flex flex-col justify-center items-center">
 
