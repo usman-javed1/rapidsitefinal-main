@@ -3,6 +3,7 @@ import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "./submit-button";
+import { CanvasRevealEffectDemo3 } from "@/components/LoginLeftSide";
 
 export default function Login({
   searchParams,
@@ -52,8 +53,31 @@ export default function Login({
   };
 
   return (
-    <div className="flex-1 flex flex-col w-full px-8 sm:max-w-md justify-center gap-2">
-      <Link
+    <div className="">
+      <div className="absolute left-0 w-[40vw] h-[100vh] bg-[#030014]">
+        <CanvasRevealEffectDemo3 />
+      </div>
+      <div className="div w-[60vw] absolute right-0 flex justify-center items-center flex-col h-[100vh]">
+
+        <h1 className="text-[#030014] text-5xl font-bold mb-10">Login Form</h1>
+
+        <div className="label-float ">
+          <input type="text" placeholder=" " className="w-[400px]" required />
+          <label>Username</label>
+        </div>
+        <br />
+        <div className="label-float">
+          <input type="password" placeholder=" " required  className="w-[400px]" />
+          <label>Password</label>
+        </div>
+        <Link href="/signup" className="text-[#030014] text-base mt-2 hover:text-red-600 underline w-[400px]">Forgot Password</Link>
+
+        <button className="glow-on-hover mt-5 w-[400px]" type="button">Login to Dora </button>
+        <Link href="/signup" className="text-[#030014] text-base mt-2 hover:text-blue-600 underline">Create an Account</Link>
+      </div>
+
+
+      {/* <Link
         href="/"
         className="absolute left-8 top-8 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
       >
@@ -113,7 +137,7 @@ export default function Login({
             {searchParams.message}
           </p>
         )}
-      </form>
+      </form> */}
     </div>
   );
 }
