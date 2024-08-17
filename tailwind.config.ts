@@ -43,7 +43,8 @@ const config: Config = {
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
       colors: {
-        // Extend the color palette if needed
+        primary: "#030014",
+        secondary: "#9612A3",
       },
     },
   },

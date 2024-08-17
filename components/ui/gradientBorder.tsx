@@ -48,7 +48,7 @@ export function HoverBorderGradient({
             onMouseLeave={handleMouseLeave}
             onMouseMove={handleMouseMove}
             className={cn(
-                "relative flex rounded-full border content-center transition duration-500 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px w-fit",
+                "relative flex rounded-xl border content-center transition duration-500 items-center flex-col flex-nowrap gap-10 h-min justify-center overflow-visible p-px w-fit",
                 containerClassName
             )}
             {...props}

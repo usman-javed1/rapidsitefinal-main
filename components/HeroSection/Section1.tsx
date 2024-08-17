@@ -1,107 +1,61 @@
-import React, { ChangeEvent, FormEvent } from 'react';
-import Image from 'next/image';
-import { animationArray } from '@/lib/animationArray';
-import { PlaceholdersAndVanishInput } from '../ui/placeholder';
-import HeroSection from '../HeroSection';
-import Section4 from '../Features/Section4';
-
-const placeholders = [
-    "What's the first rule of Fight Club?",
-    "Who is Tyler Durden?",
-    "Where is Andrew Laeddis Hiding?",
-    "Write a JavaScript method to reverse a string",
-    "How to assemble your own PC?",
-];
+"use client";
+import React, { useState } from 'react';
+import HoverBorderGradient from '../ui/gradientBorder';
+import Link from 'next/link';
+import VideoGrid from './VideoGrid';
+import CompareBy from '../CampareBy';
 
 const Section1: React.FC = () => {
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value);
-    };
-
-    const onSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        console.log("submitted");
-    };
+    const [isHovered, setIsHovered] = useState(false);
 
     return (
-        <div className='h-[120vh] relative bg-[#030014]'>
-
-            <div className="hero h-[900px] relative bg-[#030014]">
-                <div className="hero-content flex-col">
-                    <a href="#ai" className="hero-badge">
-                        <Image src={'/shinging.svg'} width={40} height={40} alt="AI Badge" />
-                        <div className="hero-badge-text">
-                            New: Our AI Generated Websites
-                        </div>
-                    </a>
-                    <div className="section-header">
-                        <h1 className="section-header-title section-header-title-h1 text-6xl mb-5 font-[700]">
-                            <div className="section-header-title-desktop">
-                                <span>Think better with Reflect</span>
-                            </div>
+        <div>
+            <section className="mx-auto flex w-[100vw] max-w-screen-xl px-4 my-2 sm:mt-28 sm:h-[38rem]">
+                <div className="flex-[4]">
+                    <div className="flex flex-col gap-10">
+                        <h1 className="col-start-1 row-start-2 max-w-[32rem] text-start text-6xl font-extrabold tracking-tight md:text-left md:text-[4.5rem] md:leading-[4.5rem] lg:text-8xl xl:max-w-[43.5rem] xl:text-8xl text-primary">
+                            Custom <br /> <span className='text-secondary'>WEBSITE</span> for <br /> your business
                         </h1>
-                    </div>
-                    <p className="hero-description">Never miss a note, idea or connection.</p>
-                </div>
-                <div className="hero-black-hole hero-black-hole-visible">
-                    <div>
-                        <video preload="false" autoPlay muted loop src="https://reflect.app/home/build/q-c3d7becf.webm"></video>
-                    </div>
-                    <div className="hero-black-hole-circles">
-                        <div>
-                            <div className="hero-black-hole-circle hero-black-hole-circle-0">
-                                {[...Array(8)].map((_, index) => (
-                                    <div
-                                        className="hero-black-hole-circle-dot"
-                                        onMouseEnter={() => {
-                                            // JavaScript function for onMouseEnter event
-                                        }}
-                                        key={index}
-                                    ></div>
-                                ))}
+                        <p className="col-start-1 row-start-3 max-w-xl text-start text-zinc-900 md:text-left md:text-lg md:leading-6 md:tracking-normal">
+                            Build a custom GPT, embed it on your website and let it handle customer support, lead generation, engage with your users, and more.
+                        </p>
+                        <div className="flex flex-col gap-10 md:flex-row md:items-center md:gap-6">
+                            <div className="flex w-fit flex-col place-items-center items-center justify-center">
+                                <HoverBorderGradient>
+                                    Build your Website
+                                </HoverBorderGradient>
+                                <p className="mt-1 h-0 text-center text-sm text-zinc-500">No credit card required</p>
                             </div>
-                        </div>
-                        <div>
-                            <div className="hero-black-hole-circle hero-black-hole-circle-1">
-                                {[...Array(8)].map((_, index) => (
-                                    <div
-                                        className="hero-black-hole-circle-dot"
-                                        onMouseEnter={() => {
-                                            // JavaScript function for onMouseEnter event
-                                        }}
-                                        key={index}
-                                    ></div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                    <div className="hero-black-hole-stars">
-                        {animationArray.map((star, index) => (
                             <div
-                                key={index}
-                                style={{
-                                    animationDuration: `${star.duration}s`,
-                                    animationDelay: `${star.delay}s`,
-                                    top: `${star.top}%`,
-                                    left: `${star.left}%`,
-                                    transform: star.transform,
-                                }}
-                            ></div>
-                        ))}
-                    </div>
-                </div>
-                <div className="relative">
-                    <div className="bgBackDropDiv w-[1000px] flex flex-col items-center h-[400px] pt-10 mt-[240px]" style={{ zIndex: 99990 }}>
-                        <div className="w-[600px]">
-                            <PlaceholdersAndVanishInput
-                                placeholders={placeholders}
-                                onChange={handleChange}
-                                onSubmit={onSubmit}
-                            />
+                                onMouseEnter={() => setIsHovered(true)}
+                                onMouseLeave={() => setIsHovered(false)}
+                                className="flex flex-col items-center"
+                            >
+                                <Link className="flex flex-row items-center gap-2 text-lg font-semibold" href="#Video">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-6 w-6 text-primary">
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm14.024-.983a1.125 1.125 0 010 1.966l-5.603 3.113A1.125 1.125 0 019 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                    Watch Video
+                                </Link>
+                                {isHovered && (
+                                    <video
+                                        className="mt-2 w-[300px] h-[200px]  shadow-lg absolute rounded-2xl overflow-hidden"
+                                        src="https://videos.pexels.com/video-files/3252145/3252145-uhd_2560_1440_25fps.mp4" // Replace with your video path
+                                        autoPlay
+                                        loop
+                                        muted
+                                    />
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                    <VideoGrid />
+            </section>
         </div>
     );
 };
