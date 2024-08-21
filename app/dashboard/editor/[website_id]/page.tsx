@@ -2,6 +2,7 @@
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import ClientEditor from "@/components/ClientEditor";
+import  Sidebar  from "@/components/edit/Sidebar";
 
 export default async function EditorPage({
   params,
@@ -45,11 +46,13 @@ export default async function EditorPage({
 
   return (
     <div className="h-screen w-full">
-      <ClientEditor
+      {/* <ClientEditor
         content={page?.content || ""}
         userId={user.id}
         websiteId={params.website_id}
-      />
+      /> */}
+      <Sidebar />
+      
     </div>
   );
 }

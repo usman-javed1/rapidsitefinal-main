@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" >
       <body className="bg-background ">
         {/* <Navbar /> */}
-        <Header />
+        
         <main className="min-h-screen flex flex-col items-center">
           {children}
         </main>

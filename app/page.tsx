@@ -73,6 +73,7 @@ export default function Index() {
 
     return (
         <div className="">
+            <Header />
             <HeroSection />
             <CompareBy />
             <HowWorks items={accordionItems} />
