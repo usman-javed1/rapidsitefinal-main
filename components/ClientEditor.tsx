@@ -9,17 +9,29 @@ import TopBar from "./TopBar";
 import PagesPanel from "./PagesPanel";
 import TextPopup from "./textpopup2";
 import { toast } from "sonner";
+// import { Sidebar } from ".";
 
 interface ClientEditorProps {
   content: string;
   userId: string; // User ID to identify the user
   websiteId: string; // Website ID to identify the website
+  controll1Ref: any;
+  controll2Ref: any;
+  saveButtonRef: any;
+  zoomInRef?: any;
+  zoomOutRef?: any;
+
 }
 
 const ClientEditor: React.FC<ClientEditorProps> = ({
   content,
   userId,
   websiteId,
+  controll1Ref,
+  controll2Ref,
+  saveButtonRef,
+  zoomInRef,
+  zoomOutRef,
 }) => {
   const [siteContent, setSiteContent] = useState<string>(content);
   const [zoom, setZoom] = useState(100);
@@ -302,15 +314,21 @@ const ClientEditor: React.FC<ClientEditorProps> = ({
   };
 
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="flex flex-col h-screen">
       <div className="flex flex-1">
-        <ChatWindow />
+        {/* <ChatWindow /> */}
+        {/* <Sidebar /> */}
         <div className="flex-1 flex flex-col relative">
+          <div></div>
           <TopBar
             zoom={zoom}
             onZoomIn={handleZoomIn}
             onZoomOut={handleZoomOut}
             onSave={handleSave} // Pass the handleSave function to TopBar
+            saveButtonRef={saveButtonRef}
+            zoomInRef={zoomInRef}
+            zoomOutRef={zoomOutRef}
+
           />
           <MainEditingPanel
             iframeRef={iframeRef}
@@ -336,9 +354,11 @@ const ClientEditor: React.FC<ClientEditorProps> = ({
             isEditMode={isEditMode}
             togglePickMode={togglePickMode}
             toggleEditMode={toggleEditMode}
+            controll1Ref={controll1Ref}
+            controll2Ref={controll2Ref}
           />
         </div>
-        <PagesPanel />
+        {/* <PagesPanel /> */}
       </div>
     </div>
   );

@@ -46,12 +46,12 @@ export default async function EditorPage({
 
   return (
     <div className="h-screen w-full">
-      {/* <ClientEditor
+      <Sidebar
         content={page?.content || ""}
         userId={user.id}
         websiteId={params.website_id}
-      /> */}
-      <Sidebar />
+      />
+      {/* <Sidebar /> */}
       
     </div>
   );

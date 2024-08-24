@@ -3,6 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import Navbar from "@/components/Navbar";
 import Header from "@/components/Header";
+import { ClientEditorProvider } from "@/context";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -22,12 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en" >
       <body className="bg-background ">
-        {/* <Navbar /> */}
-        
-        <main className="min-h-screen flex flex-col items-center">
-          {children}
-        </main>
-        <Toaster richColors />
+        <ClientEditorProvider>
+          {/* <Navbar /> */}
+
+          <main className="min-h-screen flex flex-col items-center">
+            {children}
+          </main>
+          <Toaster richColors />
+        </ClientEditorProvider>
       </body>
     </html>
   );

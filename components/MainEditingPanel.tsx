@@ -16,10 +16,10 @@ const MainEditingPanel: React.FC<MainEditingPanelProps> = ({
   selectedElement,
 }) => {
   return (
-    <div className="flex-1 relative overflow-hidden bg-white border border-gray-300 rounded-lg shadow-lg m-4">
+    <div className="flex-1 relative overflow-hidden bg-white  border-gray-300 rounded-lg shadow-lg m-4">
       <iframe
         ref={iframeRef}
-        className="w-full h-full border-0 rounded-lg"
+        className="w-[100vw] min-h-[740vh] border-0 rounded-lg"
         style={{
           transform: `scale(${zoom / 100})`,
           transformOrigin: "top left",

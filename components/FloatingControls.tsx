@@ -6,6 +6,8 @@ interface FloatingControlsProps {
   isEditMode: boolean;
   togglePickMode: () => void;
   toggleEditMode: () => void;
+  controll1Ref: any;
+  controll2Ref: any;
 }
 
 const FloatingControls: React.FC<FloatingControlsProps> = ({
@@ -13,11 +15,14 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({
   isEditMode,
   togglePickMode,
   toggleEditMode,
+  controll1Ref,
+  controll2Ref
 }) => {
   return (
     <div className="bg-white p-4 flex justify-between items-center border-b border-gray-300">
       <div className="flex space-x-2">
         <button
+          ref={controll1Ref}
           className={`px-4 py-2 rounded flex items-center ${
             isPickMode ? "bg-blue-500 text-white" : "bg-gray-200"
           }`}
@@ -28,8 +33,10 @@ const FloatingControls: React.FC<FloatingControlsProps> = ({
         </button>
         <button
           className={`px-4 py-2 rounded flex items-center ${
+            
             isEditMode ? "bg-green-500 text-white" : "bg-gray-200"
-          }`}
+            }`}
+          ref={controll2Ref}
           onClick={toggleEditMode}
         >
           <Edit3 size={20} className="mr-2" />
