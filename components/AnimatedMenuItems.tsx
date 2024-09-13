@@ -8,4 +8,12 @@ const MenuItems: React.FC = () => {
     );
 };
 
+const AnimatedMenuItems: React.FC = () => {
+    return (
+        <div className="">
+            
+        </div>
+    );
+}
+
 export default AnimatedMenuItems;
